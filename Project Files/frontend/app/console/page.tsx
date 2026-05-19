@@ -18,6 +18,8 @@ interface PipelineResult {
   query_id: number
 }
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+
 export default function ConsolePage() {
   const [question, setQuestion] = useState("")
   const [isGenerating, setIsGenerating] = useState(false)
@@ -35,7 +37,7 @@ export default function ConsolePage() {
     setPipelineResult(null)
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/generate", {
+      const res = await axios.post(`${API_BASE}/api/generate`, {
         question
       })
       setPipelineResult(res.data)
@@ -53,7 +55,7 @@ export default function ConsolePage() {
     setError(null)
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/execute", {
+      const res = await axios.post(`${API_BASE}/api/execute`, {
         sql: pipelineResult.sql,
         query_id: pipelineResult.query_id
       })

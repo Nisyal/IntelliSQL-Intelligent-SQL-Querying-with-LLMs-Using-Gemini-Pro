@@ -18,6 +18,8 @@ interface HistoryItem {
   created_at: string
 }
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+
 export default function HistoryPage() {
   const [history, setHistory] = useState<HistoryItem[]>([])
   const [loading, setLoading] = useState(true)
@@ -26,7 +28,7 @@ export default function HistoryPage() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/api/history?page_size=50")
+      const res = await axios.get(`${API_BASE}/api/history?page_size=50`)
       setHistory(res.data.items)
     } catch (err) {
       console.error("Failed to fetch history:", err)
@@ -41,7 +43,7 @@ export default function HistoryPage() {
 
   const handleDelete = async (id: number) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/history/${id}`)
+      await axios.delete(`${API_BASE}/api/history/${id}`)
       setHistory(history.filter(item => item.id !== id))
     } catch (err) {
       console.error("Failed to delete history item:", err)
