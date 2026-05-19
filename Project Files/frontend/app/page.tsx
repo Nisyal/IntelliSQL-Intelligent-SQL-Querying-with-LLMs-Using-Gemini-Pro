@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Database, Terminal, Zap } from "lucide-react"
+import { ArrowRight, Database, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function LandingPage() {
@@ -72,7 +72,7 @@ export default function LandingPage() {
               <div className="p-4 rounded-md border border-border bg-[#0a0a0a] font-mono text-sm text-foreground">
                 <span className="text-primary font-bold">SELECT</span> * <span className="text-primary font-bold">FROM</span> students
                 <br />
-                <span className="text-primary font-bold">WHERE</span> class <span className="text-primary font-bold">ILIKE</span> 'BTech' <span className="text-primary font-bold">AND</span> marks {'>'} 80
+                <span className="text-primary font-bold">WHERE</span> class <span className="text-primary font-bold">ILIKE</span> &apos;BTech&apos; <span className="text-primary font-bold">AND</span> marks {'>'} 80
                 <br />
                 <span className="text-primary font-bold">ORDER BY</span> marks <span className="text-primary font-bold">DESC</span>
                 <br />

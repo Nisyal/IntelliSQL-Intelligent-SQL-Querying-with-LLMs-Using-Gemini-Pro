@@ -103,7 +103,7 @@ export default function HistoryPage() {
               <div className="flex-1 space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-medium text-foreground">
-                    "{item.natural_query}"
+                    &ldquo;{item.natural_query}&rdquo;
                   </h3>
                   <div className="flex items-center gap-3">
                     <span className="text-xs text-muted-foreground">

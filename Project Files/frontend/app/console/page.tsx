@@ -26,7 +26,7 @@ export default function ConsolePage() {
   const [isExecuting, setIsExecuting] = useState(false)
   
   const [pipelineResult, setPipelineResult] = useState<PipelineResult | null>(null)
-  const [results, setResults] = useState<{ columns: string[], rows: any[][] } | null>(null)
+  const [results, setResults] = useState<{ columns: string[], rows: unknown[][] } | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   const handleGenerate = async () => {
@@ -41,8 +41,9 @@ export default function ConsolePage() {
         question
       })
       setPipelineResult(res.data)
-    } catch (err: any) {
-      setError(err.response?.data?.detail || "Failed to run pipeline.")
+    } catch (err) {
+      const axiosError = err as { response?: { data?: { detail?: string } } }
+      setError(axiosError.response?.data?.detail || "Failed to run pipeline.")
     } finally {
       setIsGenerating(false)
     }
@@ -60,8 +61,9 @@ export default function ConsolePage() {
         query_id: pipelineResult.query_id
       })
       setResults({ columns: res.data.columns, rows: res.data.rows })
-    } catch (err: any) {
-      setError(err.response?.data?.detail || "Execution failed.")
+    } catch (err) {
+      const axiosError = err as { response?: { data?: { detail?: string } } }
+      setError(axiosError.response?.data?.detail || "Execution failed.")
     } finally {
       setIsExecuting(false)
     }
