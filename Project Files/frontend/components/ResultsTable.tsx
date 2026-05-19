@@ -5,7 +5,7 @@ import { Button } from "./ui/button"
 
 interface ResultsTableProps {
   columns: string[]
-  rows: any[][]
+  rows: unknown[][]
 }
 
 export function ResultsTable({ columns, rows }: ResultsTableProps) {

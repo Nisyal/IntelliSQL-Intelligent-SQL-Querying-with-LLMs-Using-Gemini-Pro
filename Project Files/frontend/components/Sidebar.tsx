@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Terminal, History, Settings, LogOut, Database } from "lucide-react"
+import { LayoutDashboard, Terminal, History, LogOut, Database } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 

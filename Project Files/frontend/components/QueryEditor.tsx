@@ -3,8 +3,7 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-export interface QueryEditorProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+export type QueryEditorProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const QueryEditor = React.forwardRef<HTMLTextAreaElement, QueryEditorProps>(
   ({ className, ...props }, ref) => {

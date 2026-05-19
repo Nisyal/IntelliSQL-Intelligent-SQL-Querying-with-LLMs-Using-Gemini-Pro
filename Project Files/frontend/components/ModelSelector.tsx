@@ -1,7 +1,6 @@
 "use client"
 
 import { Check, ChevronsUpDown } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import { useState } from "react"
@@ -19,7 +18,7 @@ const models = [
   },
 ]
 
-export function ModelSelector({ value, onChange }: { value: str, onChange: (v: str) => void }) {
+export function ModelSelector({ value, onChange }: { value: string, onChange: (v: string) => void }) {
   const [open, setOpen] = useState(false)
   const selected = models.find((m) => m.id === value) || models[0]
 
