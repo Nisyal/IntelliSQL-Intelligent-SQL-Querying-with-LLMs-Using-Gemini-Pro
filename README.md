@@ -64,7 +64,7 @@ cd intellisql
 
 ### 2️⃣ Configure Environment Variables
 
-**Backend (`/Project Files/backend/.env`):**
+**Backend (`/Project_Files/backend/.env`):**
 ```env
 DATABASE_URL=postgresql://user:pass@host/dbname?sslmode=require
 LLM_API_KEY=your_openrouter_api_key
@@ -77,7 +77,7 @@ CORS_ORIGINS=http://localhost:3000
 
 ### 3️⃣ Running the Backend (FastAPI)
 ```bash
-cd "Project Files/backend"
+cd Project_Files/backend
 python -m venv venv
 # Windows
 venv\Scripts\activate
