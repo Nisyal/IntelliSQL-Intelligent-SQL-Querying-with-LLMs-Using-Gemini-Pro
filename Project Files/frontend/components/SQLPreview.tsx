@@ -4,7 +4,7 @@ import { Card } from "./ui/card"
 import { Copy, Terminal } from "lucide-react"
 import { Button } from "./ui/button"
 
-export function SQLPreview({ sql }: { sql: str }) {
+export function SQLPreview({ sql }: { sql: string }) {
   if (!sql) return null
 
   const handleCopy = () => {
@@ -12,7 +12,7 @@ export function SQLPreview({ sql }: { sql: str }) {
   }
 
   // Very basic syntax highlighting for demo purposes
-  const highlightSQL = (text: str) => {
+  const highlightSQL = (text: string) => {
     const keywords = ["SELECT", "FROM", "WHERE", "AND", "OR", "GROUP BY", "ORDER BY", "LIMIT", "COUNT", "SUM", "AVG", "JOIN", "ON", "ILIKE", "AS"]
     let highlighted = text
     keywords.forEach(kw => {
